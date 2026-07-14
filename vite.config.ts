@@ -1,11 +1,15 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
+// 判断是否GitHub Pages打包
+const isGithubPages = process.env.GITHUB_PAGES === 'true'
+
 export default defineConfig({
   plugins: [vue()],
-  base: '/link-visual/',  // 和仓库名完全一致，前后都有斜杠
-  server: {
-    host: '0.0.0.0',
-    port: 5173
+  // 线上用/link-visual/，本地用/
+  base: isGithubPages ? '/link-visual/' : '/',
+  build: {
+    assetsDir: 'assets',
+    emptyOutDir: true
   }
 })

@@ -5,7 +5,6 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
-# 完整权限声明，给Pages读写权限
 permissions:
   contents: read
   pages: write
@@ -33,10 +32,11 @@ jobs:
 
       - name: Build project
         run: npm run build
+        env:
+          GITHUB_PAGES: true
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
-        # 删掉 with: enablement: true 这两行！不需要自动创建站点
 
       - name: Upload build artifact
         uses: actions/upload-pages-artifact@v3
