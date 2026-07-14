@@ -76,6 +76,7 @@ html, body, #app {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  overflow-x: hidden;
   background: #2b2b2b;
   font-family: Arial, sans-serif;
 }
@@ -108,6 +109,7 @@ html, body, #app {
 /* 左侧：1份，固定243px，严格1:5比例 */
 .sidebar {
   flex: 0 0 243px;
+  min-width: 243px;
   background: #1e1e1e;
   padding: 18px 16px;
   display: flex;
@@ -223,7 +225,7 @@ html, body, #app {
   flex: 1;
   height: 100%;
   padding: 16px 24px;
-  overflow: hidden;
+  overflow: auto;/* 之前是hidden */
   display: flex;
   flex-direction: column;
   align-items: stretch;

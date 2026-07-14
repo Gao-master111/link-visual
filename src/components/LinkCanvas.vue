@@ -971,6 +971,7 @@ onUnmounted(() => {
   background: #2b2b2b;
   border: none;
   min-height: 0;
+  min-width: 600px;
 }
 /* 代码面板样式 */
 .code-panel {
